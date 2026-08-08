@@ -74,7 +74,7 @@ function Landing() {
       <Features />
 
       <ScrollSequence
-        id="architecture"
+        id="showcase-3d"
         frames={[
           { src: heroVilla, label: t.scenes.exterior, alt: "Villa exterior at golden hour" },
           { src: facade, label: t.scenes.facade, alt: "Concrete facade close-up" },
