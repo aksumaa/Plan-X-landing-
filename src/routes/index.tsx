@@ -3,11 +3,17 @@ import { toast } from "sonner";
 import { LangProvider, useLang } from "@/lib/i18n";
 import { Nav } from "@/components/planx/Nav";
 import { Hero } from "@/components/planx/Hero";
+import { TrustedBy } from "@/components/planx/TrustedBy";
+import { Features } from "@/components/planx/Features";
 import { ScrollSequence } from "@/components/planx/ScrollSequence";
 import { IdeaSection } from "@/components/planx/IdeaSection";
 import { HowItWorks } from "@/components/planx/HowItWorks";
 import { Showcase } from "@/components/planx/Showcase";
 import { AiSection } from "@/components/planx/AiSection";
+import { Calculator } from "@/components/planx/Calculator";
+import { WhyPlanX } from "@/components/planx/WhyPlanX";
+import { Testimonials } from "@/components/planx/Testimonials";
+import { Faq } from "@/components/planx/Faq";
 import { FinalCta } from "@/components/planx/FinalCta";
 import { Footer } from "@/components/planx/Footer";
 
@@ -64,8 +70,11 @@ function Landing() {
     <main>
       <Nav onStart={start} />
       <Hero onStart={start} onExplore={explore} />
+      <TrustedBy />
+      <Features />
 
       <ScrollSequence
+        id="showcase-3d"
         frames={[
           { src: heroVilla, label: t.scenes.exterior, alt: "Villa exterior at golden hour" },
           { src: facade, label: t.scenes.facade, alt: "Concrete facade close-up" },
@@ -91,6 +100,8 @@ function Landing() {
         ]}
       />
 
+      <AiSection />
+      <Calculator onStart={start} />
       <Showcase />
 
       <ScrollSequence
@@ -104,7 +115,9 @@ function Landing() {
         ]}
       />
 
-      <AiSection />
+      <WhyPlanX />
+      <Testimonials />
+      <Faq />
       <FinalCta onStart={start} />
       <Footer />
     </main>

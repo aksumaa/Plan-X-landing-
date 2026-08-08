@@ -14,7 +14,7 @@ export function Showcase() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section id="about" className="bg-background py-28 md:py-40">
+    <section id="gallery" className="bg-background py-28 md:py-40">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 md:px-16">
         <Reveal>
           <p className="eyebrow">{t.showcase.label}</p>

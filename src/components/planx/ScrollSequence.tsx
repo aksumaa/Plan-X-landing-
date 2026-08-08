@@ -43,11 +43,13 @@ export function ScrollSequence({
   frames,
   label,
   headline,
+  id,
   className = "",
 }: {
   frames: Frame[];
   label?: string;
   headline?: string;
+  id?: string;
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -63,7 +65,7 @@ export function ScrollSequence({
   });
 
   return (
-    <div ref={ref} style={{ height: `${frames.length * 90}vh` }} className={className}>
+    <div id={id} ref={ref} style={{ height: `${frames.length * 90}vh` }} className={className}>
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-ink">
         {frames.map((f, i) => (
           <Layer key={f.src} frame={f} index={i} total={frames.length} progress={scrollYProgress} />
