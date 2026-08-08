@@ -16,10 +16,12 @@ export function Nav({ onStart }: { onStart: () => void }) {
   }, []);
 
   const items = [
-    { href: "#architecture", label: t.nav.architecture },
-    { href: "#ai", label: t.nav.ai },
+    { href: "#features", label: t.nav.features },
     { href: "#how", label: t.nav.how },
-    { href: "#about", label: t.nav.about },
+    { href: "#ai", label: t.nav.ai },
+    { href: "#calculator", label: t.nav.calculator },
+    { href: "#gallery", label: t.nav.gallery },
+    { href: "#faq", label: "FAQ" },
   ];
 
   return (
