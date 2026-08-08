@@ -12,7 +12,7 @@ export function Calculator({ onStart }: { onStart: () => void }) {
   const [floors, setFloors] = useState(2);
   const [tier, setTier] = useState(1);
 
-  const perSqm = Math.round(RATES[tier] * FLOOR_FACTOR[floors - 1]);
+  const perSqm = Math.round((RATES[tier] ?? RATES[1]!) * (FLOOR_FACTOR[floors - 1] ?? 1));
   const total = perSqm * area;
   const money = new Intl.NumberFormat("en-US", {
     style: "currency",
