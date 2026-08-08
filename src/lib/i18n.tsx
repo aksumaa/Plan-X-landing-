@@ -12,7 +12,16 @@ export const LANGS = ["UZ", "EN", "RU"] as const;
 export type Lang = (typeof LANGS)[number];
 
 type Dict = {
-  nav: { architecture: string; ai: string; how: string; about: string; cta: string };
+  nav: {
+    architecture: string;
+    ai: string;
+    how: string;
+    about: string;
+    features: string;
+    calculator: string;
+    gallery: string;
+    cta: string;
+  };
   hero: {
     eyebrow: string;
     headline: string;
