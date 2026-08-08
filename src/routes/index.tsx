@@ -70,6 +70,8 @@ function Landing() {
     <main>
       <Nav onStart={start} />
       <Hero onStart={start} onExplore={explore} />
+      <TrustedBy />
+      <Features />
 
       <ScrollSequence
         frames={[
@@ -97,6 +99,8 @@ function Landing() {
         ]}
       />
 
+      <AiSection />
+      <Calculator onStart={start} />
       <Showcase />
 
       <ScrollSequence
@@ -110,7 +114,9 @@ function Landing() {
         ]}
       />
 
-      <AiSection />
+      <WhyPlanX />
+      <Testimonials />
+      <Faq />
       <FinalCta onStart={start} />
       <Footer />
     </main>
