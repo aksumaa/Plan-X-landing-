@@ -2,7 +2,7 @@ import { LANGS, useLang } from "@/lib/i18n";
 
 export function Footer() {
   const { lang, setLang, t } = useLang();
-  const hrefs = ["#architecture", "#ai", "#how", "#about", "#top"];
+  const hrefs = ["#features", "#architecture", "#how", "#calculator", "#gallery"];
 
   return (
     <footer className="bg-background">
