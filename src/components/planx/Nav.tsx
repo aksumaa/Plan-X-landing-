@@ -17,9 +17,10 @@ export function Nav({ onStart }: { onStart: () => void }) {
   }, []);
 
   const items = [
-    { href: "#features", label: t.nav.features },
+    { href: "#benefits", label: t.nav.features },
     { href: "#how", label: t.nav.how },
-    { href: "#ai", label: t.nav.ai },
+    { href: "#ai-demo", label: t.nav.ai },
+    { href: "#materials", label: "Materials" },
     { href: "#calculator", label: t.nav.calculator },
     { href: "#gallery", label: t.nav.gallery },
     { href: "#faq", label: "FAQ" },
