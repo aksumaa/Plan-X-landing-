@@ -46,7 +46,7 @@ export function Nav({ onStart }: { onStart: () => void }) {
         </a>
 
 
-        <ul className="hidden items-center gap-9 md:flex">
+        <ul className="hidden items-center gap-6 md:flex lg:gap-9">
           {items.map((i) => (
             <li key={i.href}>
               <a
