@@ -53,7 +53,7 @@ export function Benefits() {
 
         <ul className="mt-14 grid gap-px border-t border-border sm:grid-cols-2 lg:grid-cols-4 md:mt-20">
           {c.items.map((it, i) => {
-            const Icon = icons[i];
+            const Icon = icons[i] ?? LayoutPanelTop;
             return (
               <Reveal key={it.title} delay={i * 0.06}>
                 <li className="group h-full border-b border-border px-0 py-9 transition-colors duration-500 sm:px-6 sm:[&:not(:last-child)]:border-r">
