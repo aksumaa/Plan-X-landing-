@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { LANGS, useLang } from "@/lib/i18n";
+import mark from "@/assets/planx-mark.png";
 
 export function Nav({ onStart }: { onStart: () => void }) {
   const { lang, setLang, t } = useLang();
@@ -16,9 +17,10 @@ export function Nav({ onStart }: { onStart: () => void }) {
   }, []);
 
   const items = [
-    { href: "#features", label: t.nav.features },
+    { href: "#benefits", label: t.nav.features },
     { href: "#how", label: t.nav.how },
-    { href: "#ai", label: t.nav.ai },
+    { href: "#ai-demo", label: t.nav.ai },
+    { href: "#materials", label: "Materials" },
     { href: "#calculator", label: t.nav.calculator },
     { href: "#gallery", label: t.nav.gallery },
     { href: "#faq", label: "FAQ" },
@@ -31,11 +33,20 @@ export function Nav({ onStart }: { onStart: () => void }) {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-10 md:h-20 md:px-16">
-        <a href="#top" className="display text-lg tracking-[-0.02em] text-foreground">
-          PlanX
+        <a href="#top" className="group flex items-center gap-2.5" aria-label="PlanX — home">
+          <img
+            src={mark}
+            alt=""
+            aria-hidden="true"
+            width={96}
+            height={104}
+            className="h-7 w-auto transition-transform duration-500 group-hover:-translate-y-0.5 md:h-8"
+          />
+          <span className="display text-lg tracking-[-0.02em] text-foreground">PlanX</span>
         </a>
 
-        <ul className="hidden items-center gap-9 md:flex">
+
+        <ul className="hidden items-center gap-6 md:flex lg:gap-9">
           {items.map((i) => (
             <li key={i.href}>
               <a

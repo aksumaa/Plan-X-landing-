@@ -4,7 +4,11 @@ import { LangProvider, useLang } from "@/lib/i18n";
 import { Nav } from "@/components/planx/Nav";
 import { Hero } from "@/components/planx/Hero";
 import { TrustedBy } from "@/components/planx/TrustedBy";
+import { Benefits } from "@/components/planx/Benefits";
 import { Features } from "@/components/planx/Features";
+import { MaterialPreview } from "@/components/planx/MaterialPreview";
+import { Audience } from "@/components/planx/Audience";
+import { AiDemo } from "@/components/planx/AiDemo";
 import { ScrollSequence } from "@/components/planx/ScrollSequence";
 import { IdeaSection } from "@/components/planx/IdeaSection";
 import { HowItWorks } from "@/components/planx/HowItWorks";
@@ -71,7 +75,9 @@ function Landing() {
       <Nav onStart={start} />
       <Hero onStart={start} onExplore={explore} />
       <TrustedBy />
+      <Benefits />
       <Features />
+
 
       <ScrollSequence
         id="showcase-3d"
@@ -101,8 +107,11 @@ function Landing() {
       />
 
       <AiSection />
+      <AiDemo />
       <Calculator onStart={start} />
+      <MaterialPreview />
       <Showcase />
+
 
       <ScrollSequence
         label={t.daynight.label}
@@ -116,6 +125,8 @@ function Landing() {
       />
 
       <WhyPlanX />
+      <Audience />
+
       <Testimonials />
       <Faq />
       <FinalCta onStart={start} />
