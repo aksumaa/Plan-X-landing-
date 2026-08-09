@@ -1,28 +1,50 @@
 import { Reveal } from "./Reveal";
 import { useLang, type Lang } from "@/lib/i18n";
 
-const COPY: Record<Lang, { label: string; headline: string; steps: string[] }> = {
+type Step = { title: string; text: string };
+
+const COPY: Record<Lang, { label: string; headline: string; steps: Step[] }> = {
   EN: {
     label: "How it works",
     headline: "From a sentence to a construction-ready home.",
-    steps: ["Idea", "AI Analysis", "Floor Plan", "3D Visualization", "Material Calculation", "Construction"],
+    steps: [
+      { title: "Idea", text: "Describe the home you imagine in plain language." },
+      { title: "AI Analysis", text: "Site, climate, program and constraints are read and structured." },
+      { title: "Floor Plan", text: "Zoned plans with circulation and usable areas." },
+      { title: "3D Visualization", text: "An explorable cinematic model of the result." },
+      { title: "Material Calculation", text: "Quantities and budget derived from the model." },
+      { title: "Construction", text: "Documentation your builder can start from." },
+    ],
   },
   RU: {
     label: "Как это работает",
     headline: "От фразы — до дома, готового к стройке.",
-    steps: ["Идея", "AI-анализ", "Планировка", "3D-визуализация", "Расчёт материалов", "Строительство"],
+    steps: [
+      { title: "Идея", text: "Опишите дом, который представляете, простыми словами." },
+      { title: "AI-анализ", text: "Участок, климат, программа и ограничения структурируются." },
+      { title: "Планировка", text: "Зонированные планы с логикой перемещения." },
+      { title: "3D-визуализация", text: "Кинематографичная модель, которую можно изучать." },
+      { title: "Расчёт материалов", text: "Объёмы и бюджет прямо из модели." },
+      { title: "Строительство", text: "Документация, с которой начнёт подрядчик." },
+    ],
   },
   UZ: {
     label: "Qanday ishlaydi",
     headline: "Bir gapdan qurilishga tayyor uygacha.",
-    steps: ["Fikr", "AI tahlil", "Reja", "3D vizualizatsiya", "Material hisobi", "Qurilish"],
+    steps: [
+      { title: "Fikr", text: "Tasavvur qilgan uyingizni oddiy so‘zlar bilan tavsiflang." },
+      { title: "AI tahlil", text: "Yer, iqlim, talablar va cheklovlar tuzilmaga solinadi." },
+      { title: "Reja", text: "Harakat mantiqli, zonalashtirilgan rejalar." },
+      { title: "3D vizualizatsiya", text: "Natijaning kinematografik modeli." },
+      { title: "Material hisobi", text: "Modeldan olingan hajm va byudjet." },
+      { title: "Qurilish", text: "Quruvchi boshlashi mumkin bo‘lgan hujjatlar." },
+    ],
   },
 };
 
 export function HowItWorks() {
-  const { lang, t } = useLang();
+  const { lang } = useLang();
   const c = COPY[lang];
-  const details = t.how.steps;
 
   return (
     <section
@@ -38,15 +60,14 @@ export function HowItWorks() {
           </h2>
         </Reveal>
 
-        {/* timeline */}
         <ol className="relative mt-16 md:mt-24">
           <div
             aria-hidden="true"
-            className="absolute left-[7px] top-2 bottom-2 w-px bg-border md:left-0 md:right-0 md:top-[7px] md:bottom-auto md:h-px md:w-full"
+            className="absolute left-[7px] top-2 bottom-2 w-px bg-border md:inset-x-0 md:bottom-auto md:top-[7px] md:h-px md:w-full"
           />
           <div className="grid gap-10 md:grid-cols-6 md:gap-6">
             {c.steps.map((s, i) => (
-              <Reveal key={s} delay={i * 0.07}>
+              <Reveal key={s.title} delay={i * 0.07}>
                 <li className="group relative flex gap-5 md:block">
                   <span
                     aria-hidden="true"
@@ -58,9 +79,9 @@ export function HowItWorks() {
                     <span className="text-[0.6875rem] tracking-[0.2em] text-accent">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="display mt-2 text-lg md:text-xl">{s}</h3>
+                    <h3 className="display mt-2 text-lg md:text-xl">{s.title}</h3>
                     <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">
-                      {details[i]?.text ?? ""}
+                      {s.text}
                     </p>
                   </div>
                 </li>
