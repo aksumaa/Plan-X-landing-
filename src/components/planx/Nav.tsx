@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { LANGS, useLang } from "@/lib/i18n";
+import mark from "@/assets/planx-mark.png";
 
 export function Nav({ onStart }: { onStart: () => void }) {
   const { lang, setLang, t } = useLang();

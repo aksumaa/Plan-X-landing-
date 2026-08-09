@@ -93,7 +93,7 @@ export function Hero({ onStart, onExplore }: { onStart: () => void; onExplore: (
         <motion.div
           className="absolute inset-0"
           style={{ x, y }}
-          animate={reduced ? undefined : { y: [0, -10, 0] }}
+          animate={reduced ? { y: 0 } : { y: [0, -10, 0] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         >
           {/* slow cinematic zoom */}
