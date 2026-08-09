@@ -75,7 +75,9 @@ function Landing() {
       <Nav onStart={start} />
       <Hero onStart={start} onExplore={explore} />
       <TrustedBy />
+      <Benefits />
       <Features />
+
 
       <ScrollSequence
         id="showcase-3d"
@@ -105,8 +107,11 @@ function Landing() {
       />
 
       <AiSection />
+      <AiDemo />
       <Calculator onStart={start} />
+      <MaterialPreview />
       <Showcase />
+
 
       <ScrollSequence
         label={t.daynight.label}
