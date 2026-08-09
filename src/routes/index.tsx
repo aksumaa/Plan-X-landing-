@@ -125,6 +125,8 @@ function Landing() {
       />
 
       <WhyPlanX />
+      <Audience />
+
       <Testimonials />
       <Faq />
       <FinalCta onStart={start} />
