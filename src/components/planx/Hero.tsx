@@ -89,21 +89,48 @@ export function Hero({ onStart, onExplore }: { onStart: () => void; onExplore: (
         animate={{ opacity: 1 }}
         transition={{ duration: 1.4, delay: 0.25 }}
       >
-        <motion.img
-          src={heroVilla}
-          alt="Modern concrete villa with floor-to-ceiling glass, swimming pool and landscaped garden at golden hour"
-          width={1920}
-          height={1088}
-          className="absolute inset-0 h-full w-full scale-[1.06] object-cover"
+        {/* mouse parallax + gentle float */}
+        <motion.div
+          className="absolute inset-0"
           style={{ x, y }}
-        />
+          animate={reduced ? undefined : { y: [0, -10, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        >
+          {/* slow cinematic zoom */}
+          <motion.img
+            src={heroVilla}
+            alt="Modern concrete villa with floor-to-ceiling glass, swimming pool and landscaped garden at golden hour"
+            width={1920}
+            height={1088}
+            className="absolute inset-0 h-full w-full object-cover"
+            initial={{ scale: 1.06 }}
+            animate={reduced ? { scale: 1.06 } : { scale: [1.06, 1.16, 1.06] }}
+            transition={{ duration: 28, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </motion.div>
+
         {/* subtle light that follows the cursor — reads as changing sun angle */}
         <motion.div
           className="pointer-events-none absolute inset-0"
           style={{ opacity: glareOpacity, background: glare }}
         />
+        {/* soft drifting light, independent of the cursor */}
+        {!reduced && (
+          <motion.div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 mix-blend-soft-light"
+            style={{
+              background:
+                "radial-gradient(45% 55% at 50% 45%, oklch(0.99 0.04 85 / 0.5), transparent 70%)",
+            }}
+            animate={{ x: ["-8%", "8%", "-8%"], opacity: [0.35, 0.6, 0.35] }}
+            transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+          />
+        )}
         <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background to-transparent" />
       </motion.div>
+
     </section>
   );
 }

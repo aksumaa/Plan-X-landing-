@@ -31,9 +31,18 @@ export function Nav({ onStart }: { onStart: () => void }) {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-10 md:h-20 md:px-16">
-        <a href="#top" className="display text-lg tracking-[-0.02em] text-foreground">
-          PlanX
+        <a href="#top" className="group flex items-center gap-2.5" aria-label="PlanX — home">
+          <img
+            src={mark}
+            alt=""
+            aria-hidden="true"
+            width={96}
+            height={104}
+            className="h-7 w-auto transition-transform duration-500 group-hover:-translate-y-0.5 md:h-8"
+          />
+          <span className="display text-lg tracking-[-0.02em] text-foreground">PlanX</span>
         </a>
+
 
         <ul className="hidden items-center gap-9 md:flex">
           {items.map((i) => (
