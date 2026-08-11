@@ -50,9 +50,13 @@ export function HowItWorks() {
     <section
       id="how"
       aria-labelledby="how-title"
-      className="border-y border-border bg-offwhite py-24 md:py-36"
+      className="relative overflow-hidden border-y border-border py-24 md:py-36"
     >
-      <div className="mx-auto max-w-7xl px-6 sm:px-10 md:px-16">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_60%_at_0%_50%,color-mix(in_srgb,#01796F_10%,transparent),transparent),linear-gradient(180deg,color-mix(in_srgb,#B0C4DE_35%,transparent),transparent)]"
+      />
+      <div className="relative mx-auto max-w-7xl px-6 sm:px-10 md:px-16">
         <Reveal>
           <p className="eyebrow">{c.label}</p>
           <h2 id="how-title" className="display mt-6 max-w-2xl text-3xl sm:text-4xl md:text-5xl">
@@ -71,16 +75,16 @@ export function HowItWorks() {
                 <li className="group relative flex gap-5 md:block">
                   <span
                     aria-hidden="true"
-                    className="relative z-10 mt-1.5 size-[15px] shrink-0 rounded-full border border-border bg-background transition-colors duration-500 group-hover:border-accent md:mt-0"
+                    className="relative z-10 mt-1.5 size-[15px] shrink-0 rounded-full border border-slate/40 bg-background transition-colors duration-500 group-hover:border-pine md:mt-0"
                   >
-                    <span className="absolute inset-[4px] rounded-full bg-concrete transition-colors duration-500 group-hover:bg-accent" />
+                    <span className="absolute inset-[4px] rounded-full bg-slate transition-colors duration-500 group-hover:bg-pine" />
                   </span>
                   <div className="md:mt-6">
-                    <span className="text-[0.6875rem] tracking-[0.2em] text-accent">
+                    <span className="text-[0.6875rem] tracking-[0.2em] text-pine">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <h3 className="display mt-2 text-lg md:text-xl">{s.title}</h3>
-                    <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-2 max-w-xs text-sm leading-relaxed text-slate">
                       {s.text}
                     </p>
                   </div>

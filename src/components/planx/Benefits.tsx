@@ -58,12 +58,12 @@ export function Benefits() {
               <Reveal key={it.title} delay={i * 0.06}>
                 <li className="group h-full border-b border-border px-0 py-9 transition-colors duration-500 sm:px-6 sm:[&:not(:last-child)]:border-r">
                   <Icon
-                    className="size-5 shrink-0 text-accent transition-transform duration-500 group-hover:-translate-y-0.5"
+                    className="size-5 shrink-0 text-pine transition-transform duration-500 group-hover:-translate-y-0.5"
                     aria-hidden="true"
                     strokeWidth={1.4}
                   />
-                  <h3 className="display mt-6 text-xl md:text-2xl">{it.title}</h3>
-                  <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">{it.text}</p>
+                  <h3 className="display mt-6 text-xl text-ink md:text-2xl">{it.title}</h3>
+                  <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate">{it.text}</p>
                 </li>
               </Reveal>
             );

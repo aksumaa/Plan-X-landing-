@@ -1,7 +1,7 @@
 import { Reveal } from "./Reveal";
 import { useLang } from "@/lib/i18n";
 import { Check } from "lucide-react";
-import concrete from "@/assets/concrete.jpg";
+import concrete from "@/assets/concrete-mist.jpg";
 
 export function WhyPlanX() {
   const { t } = useLang();

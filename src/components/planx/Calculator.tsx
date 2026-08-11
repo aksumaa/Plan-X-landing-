@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Reveal } from "./Reveal";
 import { useLang } from "@/lib/i18n";
-import blueprint from "@/assets/blueprint.jpg";
+import blueprint from "@/assets/blueprint-mist.jpg";
 
 const RATES = [520, 780, 1150];
 const FLOOR_FACTOR = [1, 0.94, 0.9];

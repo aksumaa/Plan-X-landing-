@@ -2,10 +2,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Reveal } from "./Reveal";
 import { useLang } from "@/lib/i18n";
-import villa from "@/assets/hero-villa.jpg";
-import minimal from "@/assets/project-minimal.jpg";
-import luxury from "@/assets/project-luxury.jpg";
-import compact from "@/assets/project-compact.jpg";
+import villa from "@/assets/hero-mist.jpg";
+import minimal from "@/assets/facade-mist.jpg";
+import luxury from "@/assets/pool-mist.jpg";
+import compact from "@/assets/interior-mist.jpg";
 
 const images = [villa, minimal, luxury, compact];
 

@@ -71,16 +71,16 @@ export function ScrollSequence({
           <Layer key={f.src} frame={f} index={i} total={frames.length} progress={scrollYProgress} />
         ))}
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-ink/25" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-[color-mix(in_srgb,#6D8196_30%,transparent)]" />
 
         <div className="pointer-events-none absolute inset-x-0 bottom-0 px-6 pb-10 sm:px-10 md:px-16 md:pb-14">
           <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-lg">
               {label && (
-                <p className="eyebrow text-primary-foreground/60">{label}</p>
+                <p className="eyebrow text-[#B0C4DE]/70">{label}</p>
               )}
               {headline && (
-                <h2 className="display mt-3 text-3xl text-primary-foreground sm:text-4xl md:text-5xl">
+                <h2 className="display mt-3 text-3xl text-[#E8EEF5] sm:text-4xl md:text-5xl">
                   {headline}
                 </h2>
               )}
@@ -91,7 +91,7 @@ export function ScrollSequence({
                 <li
                   key={f.label}
                   className={`text-[0.6875rem] uppercase tracking-[0.2em] transition-colors duration-500 ${
-                    i === active ? "text-primary-foreground" : "text-primary-foreground/35"
+                    i === active ? "text-pine" : "text-[#B0C4DE]/40"
                   }`}
                 >
                   {f.label}

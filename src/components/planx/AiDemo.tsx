@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { useLang, type Lang } from "@/lib/i18n";
-import heroVilla from "@/assets/hero-villa.jpg";
+import heroVilla from "@/assets/hero-mist.jpg";
 
 const COPY: Record<
   Lang,

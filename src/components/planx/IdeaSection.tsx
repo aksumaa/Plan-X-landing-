@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Reveal } from "./Reveal";
 import { useLang } from "@/lib/i18n";
-import wireframe from "@/assets/wireframe.jpg";
+import wireframe from "@/assets/wireframe-mist.jpg";
 
 export function IdeaSection() {
   const { t } = useLang();

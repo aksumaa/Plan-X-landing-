@@ -21,15 +21,15 @@ import { Faq } from "@/components/planx/Faq";
 import { FinalCta } from "@/components/planx/FinalCta";
 import { Footer } from "@/components/planx/Footer";
 
-import heroVilla from "@/assets/hero-villa.jpg";
-import facade from "@/assets/facade.jpg";
-import pool from "@/assets/pool.jpg";
-import interior from "@/assets/interior.jpg";
-import night from "@/assets/night.jpg";
-import bluehour from "@/assets/bluehour.jpg";
-import wireframe from "@/assets/wireframe.jpg";
-import blueprint from "@/assets/blueprint.jpg";
-import concrete from "@/assets/concrete.jpg";
+import heroVilla from "@/assets/hero-mist.jpg";
+import facade from "@/assets/facade-mist.jpg";
+import pool from "@/assets/pool-mist.jpg";
+import interior from "@/assets/interior-mist.jpg";
+import night from "@/assets/night-mist.jpg";
+import bluehour from "@/assets/bluehour-mist.jpg";
+import wireframe from "@/assets/wireframe-mist.jpg";
+import blueprint from "@/assets/blueprint-mist.jpg";
+import concrete from "@/assets/concrete-mist.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -82,11 +82,11 @@ function Landing() {
       <ScrollSequence
         id="showcase-3d"
         frames={[
-          { src: heroVilla, label: t.scenes.exterior, alt: "Villa exterior at golden hour" },
-          { src: facade, label: t.scenes.facade, alt: "Concrete facade close-up" },
-          { src: pool, label: t.scenes.pool, alt: "Pool and landscaped garden" },
-          { src: interior, label: t.scenes.interior, alt: "Warm minimal interior" },
-          { src: night, label: t.scenes.night, alt: "Villa at night" },
+          { src: heroVilla, label: t.scenes.exterior, alt: "Villa exterior in mountain mist" },
+          { src: facade, label: t.scenes.facade, alt: "Misty concrete facade close-up" },
+          { src: pool, label: t.scenes.pool, alt: "Pool and garden in cool fog" },
+          { src: interior, label: t.scenes.interior, alt: "Minimal interior overlooking misty mountains" },
+          { src: night, label: t.scenes.night, alt: "Villa at night in mountain fog" },
         ]}
       />
 
