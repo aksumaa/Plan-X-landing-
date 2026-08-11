@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * PlanX — Mountain Mist
+ * PlanX — Quiet Studio
  * Slate #6D8196 · Mist #B0C4DE · Pine #01796F · Charcoal #5A5A5A
  */
 
@@ -15,8 +15,8 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
-  --font-display: "Syne", "Helvetica Neue", sans-serif;
-  --font-sans: "Outfit", system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Helvetica Neue", sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -46,58 +46,33 @@
 }
 
 :root {
-  --radius: 0.2rem;
-  /* Mountain mist palette */
+  --radius: 0.75rem;
   --mist: #b0c4de;
   --slate: #6d8196;
   --pine: #01796f;
   --charcoal: #5a5a5a;
-  --ink: #2f3b48;
+  --ink: #3f4a55;
 
-  --background: #e8eef5;
+  --background: #f3f6fa;
   --foreground: #5a5a5a;
-  --offwhite: #d7e2ef;
+  --offwhite: #e7eef6;
   --concrete: #6d8196;
-  --card: #f2f6fb;
+  --card: #ffffff;
   --card-foreground: #5a5a5a;
-  --popover: #f2f6fb;
+  --popover: #ffffff;
   --popover-foreground: #5a5a5a;
   --primary: #01796f;
-  --primary-foreground: #e8eef5;
-  --secondary: #c5d4e6;
-  --secondary-foreground: #3f4f5e;
-  --muted: #d7e2ef;
+  --primary-foreground: #f3f6fa;
+  --secondary: #e7eef6;
+  --secondary-foreground: #5a5a5a;
+  --muted: #e7eef6;
   --muted-foreground: #6d8196;
   --accent: #01796f;
-  --accent-foreground: #e8eef5;
+  --accent-foreground: #f3f6fa;
   --destructive: #b42318;
-  --destructive-foreground: #e8eef5;
-  --border: color-mix(in srgb, #6d8196 28%, transparent);
-  --input: color-mix(in srgb, #6d8196 32%, transparent);
-  --ring: #01796f;
-}
-
-.dark {
-  --background: #2f3b48;
-  --foreground: #b0c4de;
-  --offwhite: #3a4654;
-  --concrete: #6d8196;
-  --charcoal: #b0c4de;
-  --ink: #1e2730;
-  --card: #3a4654;
-  --card-foreground: #b0c4de;
-  --popover: #3a4654;
-  --popover-foreground: #b0c4de;
-  --primary: #01796f;
-  --primary-foreground: #e8eef5;
-  --secondary: #3f4f5e;
-  --secondary-foreground: #b0c4de;
-  --muted: #3a4654;
-  --muted-foreground: #8fa3b8;
-  --accent: #01796f;
-  --accent-foreground: #e8eef5;
-  --border: color-mix(in srgb, #b0c4de 18%, transparent);
-  --input: color-mix(in srgb, #b0c4de 22%, transparent);
+  --destructive-foreground: #f3f6fa;
+  --border: color-mix(in srgb, #6d8196 18%, transparent);
+  --input: color-mix(in srgb, #6d8196 22%, transparent);
   --ring: #01796f;
 }
 
@@ -111,12 +86,9 @@
   }
 
   body {
-    background-color: var(--color-background);
-    background-image:
-      radial-gradient(120% 80% at 10% -10%, color-mix(in srgb, var(--mist) 55%, transparent), transparent 55%),
-      radial-gradient(90% 60% at 100% 0%, color-mix(in srgb, var(--slate) 18%, transparent), transparent 50%),
-      linear-gradient(180deg, var(--background), color-mix(in srgb, var(--mist) 35%, var(--background)));
-    background-attachment: fixed;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in srgb, var(--mist) 45%, transparent), transparent),
+      var(--background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     overflow-x: clip;
@@ -128,7 +100,9 @@
   h3 {
     font-family: var(--font-display);
     font-weight: 600;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    overflow: visible;
     text-wrap: balance;
     color: var(--ink);
   }
@@ -143,45 +117,21 @@
 @utility display {
   font-family: var(--font-display);
   font-weight: 600;
-  letter-spacing: -0.045em;
-  line-height: 0.92;
-  text-transform: uppercase;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  overflow: visible;
+  padding-block: 0.06em;
 }
 
 @utility eyebrow {
-  font-size: 0.6875rem;
-  letter-spacing: 0.28em;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 500;
-  color: var(--color-slate);
+  color: var(--slate);
 }
 
 @utility hairline {
   height: 1px;
   background: var(--color-border);
-}
-
-/* Soft mist drift used sparingly for atmosphere */
-@keyframes mist-drift {
-  0%,
-  100% {
-    transform: translate3d(-2%, 0, 0) scale(1);
-    opacity: 0.35;
-  }
-  50% {
-    transform: translate3d(3%, -1%, 0) scale(1.04);
-    opacity: 0.55;
-  }
-}
-
-@utility mist-layer {
-  pointer-events: none;
-  background: radial-gradient(50% 40% at 50% 40%, color-mix(in srgb, var(--mist) 70%, white), transparent 70%);
-  animation: mist-drift 18s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .mist-layer {
-    animation: none;
-  }
 }

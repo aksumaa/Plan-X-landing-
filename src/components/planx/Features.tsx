@@ -5,29 +5,25 @@ export function Features() {
   const { t } = useLang();
 
   return (
-    <section id="features" className="bg-background py-28 md:py-40">
+    <section id="features" className="py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 md:px-16">
         <Reveal>
           <p className="eyebrow">{t.features.label}</p>
-          <h2 className="display mt-6 max-w-2xl text-4xl sm:text-5xl md:text-[3.4rem]">
+          <h2 className="display mt-4 max-w-2xl text-3xl sm:text-4xl md:text-5xl">
             {t.features.headline}
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid border-t border-border md:mt-24 md:grid-cols-3">
+        <div className="mt-14 grid gap-10 border-t border-border pt-10 md:mt-16 md:grid-cols-3 md:gap-8">
           {t.features.items.map((f, i) => (
-            <Reveal
-              key={f.title}
-              delay={(i % 3) * 0.07}
-              className="border-b border-border p-8 md:border-r md:p-10 [&:nth-child(3n)]:md:border-r-0"
-            >
-              <span className="text-[0.6875rem] tracking-[0.24em] text-accent">
+            <Reveal key={f.title} delay={(i % 3) * 0.06}>
+              <span className="text-xs font-medium tracking-[0.16em] text-pine">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-6 text-xl tracking-[-0.02em] md:text-2xl">{f.title}</h3>
-              <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted-foreground">
-                {f.text}
-              </p>
+              <h3 className="mt-4 font-display text-xl tracking-[-0.02em] text-ink md:text-2xl">
+                {f.title}
+              </h3>
+              <p className="mt-3 text-[0.95rem] leading-relaxed text-slate">{f.text}</p>
             </Reveal>
           ))}
         </div>

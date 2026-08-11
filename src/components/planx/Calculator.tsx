@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Reveal } from "./Reveal";
 import { useLang } from "@/lib/i18n";
-import blueprint from "@/assets/blueprint-mist.jpg";
 
 const RATES = [520, 780, 1150];
 const FLOOR_FACTOR = [1, 0.94, 0.9];
@@ -98,31 +97,23 @@ export function Calculator({ onStart }: { onStart: () => void }) {
           </Reveal>
 
           <Reveal delay={0.1} className="md:col-span-5">
-            <div className="relative overflow-hidden border border-border bg-ink p-8 md:p-10">
-              <img
-                src={blueprint}
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover opacity-15"
-              />
+            <div className="relative overflow-hidden rounded-2xl border border-border bg-ink p-8 md:p-10">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,color-mix(in_srgb,#01796F_35%,transparent),transparent_45%),radial-gradient(circle_at_80%_80%,color-mix(in_srgb,#B0C4DE_25%,transparent),transparent_40%)]" />
               <div className="relative">
-                <p className="text-[0.6875rem] uppercase tracking-[0.24em] text-primary-foreground/60">
+                <p className="text-[0.6875rem] uppercase tracking-[0.24em] text-white/60">
                   {t.calc.estimate}
                 </p>
-                <p className="display mt-6 text-4xl text-primary-foreground sm:text-5xl">
+                <p className="display mt-6 text-4xl leading-[1.2] text-white sm:text-5xl">
                   {money.format(total)}
                 </p>
-                <p className="mt-4 text-[0.8125rem] text-primary-foreground/60">
+                <p className="mt-4 text-[0.8125rem] text-white/60">
                   {money.format(perSqm)} {t.calc.perSqm}
                 </p>
-                <div className="mt-8 h-px bg-primary-foreground/15" />
-                <p className="mt-6 text-[0.75rem] leading-relaxed text-primary-foreground/50">
-                  {t.calc.note}
-                </p>
+                <div className="mt-8 h-px bg-white/15" />
+                <p className="mt-6 text-[0.75rem] leading-relaxed text-white/50">{t.calc.note}</p>
                 <button
                   onClick={onStart}
-                  className="mt-8 w-full border border-primary-foreground/30 px-6 py-3.5 text-[0.75rem] uppercase tracking-[0.18em] text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-ink"
+                  className="mt-8 w-full rounded-xl bg-pine px-6 py-3.5 text-[0.75rem] font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-white hover:text-ink"
                 >
                   {t.calc.cta}
                 </button>

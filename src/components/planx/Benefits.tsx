@@ -42,28 +42,24 @@ export function Benefits() {
   const c = COPY[lang];
 
   return (
-    <section id="benefits" aria-labelledby="benefits-title" className="py-24 md:py-36">
+    <section id="benefits" aria-labelledby="benefits-title" className="py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 md:px-16">
         <Reveal>
           <p className="eyebrow">{c.label}</p>
-          <h2 id="benefits-title" className="display mt-6 max-w-2xl text-3xl sm:text-4xl md:text-5xl">
+          <h2 id="benefits-title" className="display mt-4 max-w-2xl text-3xl sm:text-4xl md:text-5xl">
             {c.headline}
           </h2>
         </Reveal>
 
-        <ul className="mt-14 grid gap-px border-t border-border sm:grid-cols-2 lg:grid-cols-4 md:mt-20">
+        <ul className="mt-14 grid gap-10 border-t border-border pt-10 sm:grid-cols-2 lg:grid-cols-4 md:mt-16 md:gap-8">
           {c.items.map((it, i) => {
             const Icon = icons[i] ?? LayoutPanelTop;
             return (
-              <Reveal key={it.title} delay={i * 0.06}>
-                <li className="group h-full border-b border-border px-0 py-9 transition-colors duration-500 sm:px-6 sm:[&:not(:last-child)]:border-r">
-                  <Icon
-                    className="size-5 shrink-0 text-pine transition-transform duration-500 group-hover:-translate-y-0.5"
-                    aria-hidden="true"
-                    strokeWidth={1.4}
-                  />
-                  <h3 className="display mt-6 text-xl text-ink md:text-2xl">{it.title}</h3>
-                  <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate">{it.text}</p>
+              <Reveal key={it.title} delay={i * 0.05}>
+                <li>
+                  <Icon className="size-5 text-pine" strokeWidth={1.5} aria-hidden />
+                  <h3 className="mt-5 font-display text-xl tracking-[-0.02em] text-ink">{it.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate">{it.text}</p>
                 </li>
               </Reveal>
             );

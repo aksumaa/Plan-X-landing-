@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { useLang, type Lang } from "@/lib/i18n";
-import heroVilla from "@/assets/hero-mist.jpg";
+import heroImg from "@/assets/hero-lakeside.jpg";
 
 const COPY: Record<
   Lang,
@@ -143,12 +143,12 @@ export function AiDemo() {
                 {phase === "done" && (
                   <motion.img
                     key="render"
-                    src={heroVilla}
-                    alt="Generated architectural concept — concrete villa with pool"
+                    src={heroImg}
+                    alt="Generated architectural concept"
                     loading="lazy"
                     initial={{ opacity: 0, scale: 1.06 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                 )}
