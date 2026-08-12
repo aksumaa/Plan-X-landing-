@@ -77,7 +77,7 @@ export function Nav({ onStart }: { onStart: () => void }) {
 
           <button
             onClick={onStart}
-            className="hidden border border-foreground/25 px-4 py-2 text-[0.75rem] uppercase tracking-[0.16em] text-foreground transition-colors hover:bg-foreground hover:text-background sm:block"
+            className="hidden border border-border px-4 py-2 text-[0.75rem] uppercase tracking-[0.16em] text-foreground transition-colors hover:bg-secondary sm:block"
           >
             {t.nav.cta}
           </button>
@@ -134,7 +134,7 @@ export function Nav({ onStart }: { onStart: () => void }) {
                   setOpen(false);
                   onStart();
                 }}
-                className="border border-foreground/25 px-4 py-2 text-[0.75rem] uppercase tracking-[0.16em]"
+                className="border border-border px-4 py-2 text-[0.75rem] uppercase tracking-[0.16em] text-foreground transition-colors hover:bg-secondary"
               >
                 {t.nav.cta}
               </button>
