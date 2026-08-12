@@ -121,7 +121,7 @@ export function Hero({ onStart, onExplore }: { onStart: () => void; onExplore: (
             className="pointer-events-none absolute inset-0 mix-blend-soft-light"
             style={{
               background:
-                "radial-gradient(45% 55% at 50% 45%, oklch(0.99 0.04 85 / 0.5), transparent 70%)",
+                "radial-gradient(45% 55% at 50% 45%, oklch(0.99 0.004 90 / 0.45), transparent 70%)",
             }}
             animate={{ x: ["-8%", "8%", "-8%"], opacity: [0.35, 0.6, 0.35] }}
             transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
