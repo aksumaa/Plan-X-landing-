@@ -24,7 +24,7 @@ export function Hero({ onStart, onExplore }: { onStart: () => void; onExplore: (
   const lightX = useTransform(sx, [-1, 1], ["30%", "70%"]);
   const lightY = useTransform(sy, [-1, 1], ["35%", "65%"]);
   const glareOpacity = useTransform(sx, [-1, 0, 1], [0.1, 0.22, 0.1]);
-  const glare = useMotionTemplate`radial-gradient(60% 60% at ${lightX} ${lightY}, oklch(0.98 0.05 80 / 0.55), transparent 70%)`;
+  const glare = useMotionTemplate`radial-gradient(60% 60% at ${lightX} ${lightY}, oklch(0.99 0.005 90 / 0.5), transparent 70%)`;
 
   const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (reduced) return;
