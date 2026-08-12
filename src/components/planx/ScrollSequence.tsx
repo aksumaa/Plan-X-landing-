@@ -66,19 +66,23 @@ export function ScrollSequence({
 
   return (
     <div id={id} ref={ref} style={{ height: `${frames.length * 90}vh` }} className={className}>
-      <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#3f4a55]">
+      <div className="sticky top-0 h-screen w-full overflow-hidden bg-ink">
         {frames.map((f, i) => (
           <Layer key={f.src} frame={f} index={i} total={frames.length} progress={scrollYProgress} />
         ))}
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#3f4a55]/75 via-transparent to-[#3f4a55]/25" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-ink/25" />
 
         <div className="pointer-events-none absolute inset-x-0 bottom-0 px-6 pb-10 sm:px-10 md:px-16 md:pb-14">
           <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-lg">
-              {label && <p className="eyebrow text-white/55">{label}</p>}
+              {label && (
+                <p className="eyebrow text-primary-foreground/60">{label}</p>
+              )}
               {headline && (
-                <h2 className="display mt-3 text-3xl text-white sm:text-4xl md:text-5xl">{headline}</h2>
+                <h2 className="display mt-3 text-3xl text-primary-foreground sm:text-4xl md:text-5xl">
+                  {headline}
+                </h2>
               )}
             </div>
 
@@ -86,8 +90,8 @@ export function ScrollSequence({
               {frames.map((f, i) => (
                 <li
                   key={f.label}
-                  className={`text-xs tracking-[0.14em] transition-colors duration-500 ${
-                    i === active ? "text-white" : "text-white/35"
+                  className={`text-[0.6875rem] uppercase tracking-[0.2em] transition-colors duration-500 ${
+                    i === active ? "text-primary-foreground" : "text-primary-foreground/35"
                   }`}
                 >
                   {f.label}

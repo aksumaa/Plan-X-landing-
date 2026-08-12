@@ -47,27 +47,47 @@ export function HowItWorks() {
   const c = COPY[lang];
 
   return (
-    <section id="how" aria-labelledby="how-title" className="bg-offwhite/60 py-24 md:py-32">
+    <section
+      id="how"
+      aria-labelledby="how-title"
+      className="border-y border-border bg-offwhite py-24 md:py-36"
+    >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 md:px-16">
         <Reveal>
           <p className="eyebrow">{c.label}</p>
-          <h2 id="how-title" className="display mt-4 max-w-2xl text-3xl sm:text-4xl md:text-5xl">
+          <h2 id="how-title" className="display mt-6 max-w-2xl text-3xl sm:text-4xl md:text-5xl">
             {c.headline}
           </h2>
         </Reveal>
 
-        <ol className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 md:mt-16">
-          {c.steps.map((s, i) => (
-            <Reveal key={s.title} delay={i * 0.05}>
-              <li>
-                <span className="text-xs font-medium tracking-[0.16em] text-pine">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-3 font-display text-xl tracking-[-0.02em] text-ink">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate">{s.text}</p>
-              </li>
-            </Reveal>
-          ))}
+        <ol className="relative mt-16 md:mt-24">
+          <div
+            aria-hidden="true"
+            className="absolute left-[7px] top-2 bottom-2 w-px bg-border md:inset-x-0 md:bottom-auto md:top-[7px] md:h-px md:w-full"
+          />
+          <div className="grid gap-10 md:grid-cols-6 md:gap-6">
+            {c.steps.map((s, i) => (
+              <Reveal key={s.title} delay={i * 0.07}>
+                <li className="group relative flex gap-5 md:block">
+                  <span
+                    aria-hidden="true"
+                    className="relative z-10 mt-1.5 size-[15px] shrink-0 rounded-full border border-border bg-background transition-colors duration-500 group-hover:border-accent md:mt-0"
+                  >
+                    <span className="absolute inset-[4px] rounded-full bg-concrete transition-colors duration-500 group-hover:bg-accent" />
+                  </span>
+                  <div className="md:mt-6">
+                    <span className="text-[0.6875rem] tracking-[0.2em] text-accent">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="display mt-2 text-lg md:text-xl">{s.title}</h3>
+                    <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">
+                      {s.text}
+                    </p>
+                  </div>
+                </li>
+              </Reveal>
+            ))}
+          </div>
         </ol>
       </div>
     </section>

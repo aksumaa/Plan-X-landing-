@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * PlanX — Quiet Studio
- * Slate #6D8196 · Mist #B0C4DE · Pine #01796F · Charcoal #5A5A5A
+ * PlanX design system — architectural palette.
+ * warm white / off-white / concrete gray / charcoal / soft black / bronze accent
  */
 
 @theme inline {
@@ -15,8 +15,8 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
-  --font-display: "Space Grotesk", "Helvetica Neue", sans-serif;
-  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-display: "Archivo", "Helvetica Neue", sans-serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -40,40 +40,57 @@
   --color-charcoal: var(--charcoal);
   --color-ink: var(--ink);
   --color-offwhite: var(--offwhite);
-  --color-mist: var(--mist);
-  --color-slate: var(--slate);
-  --color-pine: var(--pine);
 }
 
 :root {
-  --radius: 0.75rem;
-  --mist: #b0c4de;
-  --slate: #6d8196;
-  --pine: #01796f;
-  --charcoal: #5a5a5a;
-  --ink: #3f4a55;
+  --radius: 0.25rem;
+  --background: oklch(0.977 0.005 85);
+  --foreground: oklch(0.205 0.008 60);
+  --offwhite: oklch(0.955 0.006 85);
+  --concrete: oklch(0.78 0.008 70);
+  --charcoal: oklch(0.32 0.008 60);
+  --ink: oklch(0.16 0.006 60);
+  --card: oklch(0.99 0.004 85);
+  --card-foreground: oklch(0.205 0.008 60);
+  --popover: oklch(0.99 0.004 85);
+  --popover-foreground: oklch(0.205 0.008 60);
+  --primary: oklch(0.19 0.007 60);
+  --primary-foreground: oklch(0.977 0.005 85);
+  --secondary: oklch(0.94 0.007 85);
+  --secondary-foreground: oklch(0.24 0.008 60);
+  --muted: oklch(0.945 0.006 85);
+  --muted-foreground: oklch(0.52 0.01 65);
+  --accent: oklch(0.58 0.075 55);
+  --accent-foreground: oklch(0.98 0.005 85);
+  --destructive: oklch(0.52 0.16 27);
+  --destructive-foreground: oklch(0.98 0.005 85);
+  --border: oklch(0.885 0.007 80);
+  --input: oklch(0.885 0.007 80);
+  --ring: oklch(0.58 0.075 55);
+}
 
-  --background: #f3f6fa;
-  --foreground: #5a5a5a;
-  --offwhite: #e7eef6;
-  --concrete: #6d8196;
-  --card: #ffffff;
-  --card-foreground: #5a5a5a;
-  --popover: #ffffff;
-  --popover-foreground: #5a5a5a;
-  --primary: #01796f;
-  --primary-foreground: #f3f6fa;
-  --secondary: #e7eef6;
-  --secondary-foreground: #5a5a5a;
-  --muted: #e7eef6;
-  --muted-foreground: #6d8196;
-  --accent: #01796f;
-  --accent-foreground: #f3f6fa;
-  --destructive: #b42318;
-  --destructive-foreground: #f3f6fa;
-  --border: color-mix(in srgb, #6d8196 18%, transparent);
-  --input: color-mix(in srgb, #6d8196 22%, transparent);
-  --ring: #01796f;
+.dark {
+  --background: oklch(0.16 0.006 60);
+  --foreground: oklch(0.955 0.006 85);
+  --offwhite: oklch(0.22 0.007 60);
+  --concrete: oklch(0.45 0.008 70);
+  --charcoal: oklch(0.24 0.008 60);
+  --ink: oklch(0.11 0.005 60);
+  --card: oklch(0.21 0.007 60);
+  --card-foreground: oklch(0.955 0.006 85);
+  --popover: oklch(0.21 0.007 60);
+  --popover-foreground: oklch(0.955 0.006 85);
+  --primary: oklch(0.955 0.006 85);
+  --primary-foreground: oklch(0.16 0.006 60);
+  --secondary: oklch(0.26 0.008 60);
+  --secondary-foreground: oklch(0.955 0.006 85);
+  --muted: oklch(0.26 0.008 60);
+  --muted-foreground: oklch(0.7 0.01 70);
+  --accent: oklch(0.66 0.085 58);
+  --accent-foreground: oklch(0.16 0.006 60);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.66 0.085 58);
 }
 
 @layer base {
@@ -86,9 +103,7 @@
   }
 
   body {
-    background:
-      radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in srgb, var(--mist) 45%, transparent), transparent),
-      var(--background);
+    background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     overflow-x: clip;
@@ -99,12 +114,9 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: -0.03em;
-    line-height: 1.2;
-    overflow: visible;
     text-wrap: balance;
-    color: var(--ink);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -114,21 +126,22 @@
   }
 }
 
+/* Editorial display headline */
 @utility display {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.035em;
-  line-height: 1.15;
-  overflow: visible;
-  padding-block: 0.06em;
+  line-height: 0.95;
+  text-transform: uppercase;
 }
 
+/* Small architectural label */
 @utility eyebrow {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  font-size: 0.6875rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   font-weight: 500;
-  color: var(--slate);
+  color: var(--color-muted-foreground);
 }
 
 @utility hairline {

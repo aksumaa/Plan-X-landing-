@@ -5,13 +5,16 @@ export function TrustedBy() {
   const { t } = useLang();
 
   return (
-    <section className="border-y border-border py-12">
+    <section className="border-y border-border bg-background py-14 md:py-16">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 md:px-16">
         <Reveal>
           <p className="eyebrow text-center">{t.trusted.label}</p>
-          <ul className="mt-7 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+          <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-5 md:gap-x-16">
             {t.trusted.logos.map((l) => (
-              <li key={l} className="text-sm tracking-[0.12em] text-slate/70 transition hover:text-pine">
+              <li
+                key={l}
+                className="text-[0.75rem] tracking-[0.28em] text-muted-foreground/55 transition-colors hover:text-foreground"
+              >
                 {l}
               </li>
             ))}

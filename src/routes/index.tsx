@@ -21,15 +21,15 @@ import { Faq } from "@/components/planx/Faq";
 import { FinalCta } from "@/components/planx/FinalCta";
 import { Footer } from "@/components/planx/Footer";
 
-import heroVilla from "@/assets/hero-lakeside.jpg";
-import facade from "@/assets/facade-mist.jpg";
-import pool from "@/assets/pool-mist.jpg";
-import interior from "@/assets/interior-mist.jpg";
-import night from "@/assets/night-mist.jpg";
-import bluehour from "@/assets/bluehour-mist.jpg";
-import wireframe from "@/assets/wireframe-mist.jpg";
-import blueprint from "@/assets/blueprint-mist.jpg";
-import concrete from "@/assets/concrete-mist.jpg";
+import heroVilla from "@/assets/hero-villa.jpg";
+import facade from "@/assets/facade.jpg";
+import pool from "@/assets/pool.jpg";
+import interior from "@/assets/interior.jpg";
+import night from "@/assets/night.jpg";
+import bluehour from "@/assets/bluehour.jpg";
+import wireframe from "@/assets/wireframe.jpg";
+import blueprint from "@/assets/blueprint.jpg";
+import concrete from "@/assets/concrete.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -78,14 +78,15 @@ function Landing() {
       <Benefits />
       <Features />
 
+
       <ScrollSequence
         id="showcase-3d"
         frames={[
-          { src: heroVilla, label: t.scenes.exterior, alt: "Lakeside pavilion in mist" },
-          { src: facade, label: t.scenes.facade, alt: "Misty concrete facade close-up" },
-          { src: pool, label: t.scenes.pool, alt: "Pool and garden in cool fog" },
-          { src: interior, label: t.scenes.interior, alt: "Minimal interior overlooking misty mountains" },
-          { src: night, label: t.scenes.night, alt: "Villa at night in mountain fog" },
+          { src: heroVilla, label: t.scenes.exterior, alt: "Villa exterior at golden hour" },
+          { src: facade, label: t.scenes.facade, alt: "Concrete facade close-up" },
+          { src: pool, label: t.scenes.pool, alt: "Pool and landscaped garden" },
+          { src: interior, label: t.scenes.interior, alt: "Warm minimal interior" },
+          { src: night, label: t.scenes.night, alt: "Villa at night" },
         ]}
       />
 
@@ -111,12 +112,13 @@ function Landing() {
       <MaterialPreview />
       <Showcase />
 
+
       <ScrollSequence
         label={t.daynight.label}
         headline={t.daynight.headline}
         frames={[
           { src: pool, label: t.daynight.phases[0], alt: "Villa in daylight" },
-          { src: heroVilla, label: t.daynight.phases[1], alt: "Villa at soft morning light" },
+          { src: heroVilla, label: t.daynight.phases[1], alt: "Villa at sunset" },
           { src: bluehour, label: t.daynight.phases[2], alt: "Villa at blue hour" },
           { src: night, label: t.daynight.phases[3], alt: "Villa at night" },
         ]}
@@ -124,6 +126,7 @@ function Landing() {
 
       <WhyPlanX />
       <Audience />
+
       <Testimonials />
       <Faq />
       <FinalCta onStart={start} />

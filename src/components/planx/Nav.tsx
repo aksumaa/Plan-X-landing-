@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { LANGS, useLang } from "@/lib/i18n";
+import mark from "@/assets/planx-mark.png";
 
 export function Nav({ onStart }: { onStart: () => void }) {
   const { lang, setLang, t } = useLang();
@@ -19,33 +20,38 @@ export function Nav({ onStart }: { onStart: () => void }) {
     { href: "#benefits", label: t.nav.features },
     { href: "#how", label: t.nav.how },
     { href: "#ai-demo", label: t.nav.ai },
+    { href: "#materials", label: "Materials" },
+    { href: "#calculator", label: t.nav.calculator },
     { href: "#gallery", label: t.nav.gallery },
     { href: "#faq", label: "FAQ" },
   ];
 
-  const light = !solid && !open;
-
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 md:px-8">
-      <nav
-        className={`mx-auto flex h-14 max-w-7xl items-center justify-between rounded-2xl px-4 transition-all duration-300 sm:px-5 ${
-          solid || open
-            ? "border border-border bg-white/85 text-foreground shadow-sm backdrop-blur-xl"
-            : "border border-white/15 bg-white/10 text-white backdrop-blur-md"
-        }`}
-      >
-        <a href="#top" className="font-display text-lg tracking-[-0.03em]" aria-label="PlanX — home">
-          PlanX
+    <header
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${
+        solid ? "border-border/70 bg-background/75 backdrop-blur-xl" : "border-transparent bg-transparent"
+      }`}
+    >
+      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-10 md:h-20 md:px-16">
+        <a href="#top" className="group flex items-center gap-2.5" aria-label="PlanX — home">
+          <img
+            src={mark}
+            alt=""
+            aria-hidden="true"
+            width={96}
+            height={104}
+            className="h-7 w-auto transition-transform duration-500 group-hover:-translate-y-0.5 md:h-8"
+          />
+          <span className="display text-lg tracking-[-0.02em] text-foreground">PlanX</span>
         </a>
 
-        <ul className="hidden items-center gap-7 md:flex">
+
+        <ul className="hidden items-center gap-6 md:flex lg:gap-9">
           {items.map((i) => (
             <li key={i.href}>
               <a
                 href={i.href}
-                className={`text-sm transition ${
-                  light ? "text-white/75 hover:text-white" : "text-slate hover:text-ink"
-                }`}
+                className="text-[0.8125rem] tracking-wide text-muted-foreground transition-colors hover:text-foreground"
               >
                 {i.label}
               </a>
@@ -53,21 +59,15 @@ export function Nav({ onStart }: { onStart: () => void }) {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 md:gap-6">
           <div className="hidden items-center gap-1 sm:flex" role="group" aria-label="Language">
             {LANGS.map((l) => (
               <button
                 key={l}
                 onClick={() => setLang(l)}
                 aria-pressed={lang === l}
-                className={`px-1.5 py-1 text-xs tracking-wide transition ${
-                  lang === l
-                    ? light
-                      ? "text-white"
-                      : "text-ink"
-                    : light
-                      ? "text-white/50 hover:text-white"
-                      : "text-slate/70 hover:text-ink"
+                className={`px-1.5 py-1 text-[0.6875rem] tracking-[0.16em] transition-colors ${
+                  lang === l ? "text-foreground" : "text-muted-foreground/60 hover:text-foreground"
                 }`}
               >
                 {l}
@@ -77,7 +77,7 @@ export function Nav({ onStart }: { onStart: () => void }) {
 
           <button
             onClick={onStart}
-            className="hidden rounded-xl bg-pine px-3.5 py-2 text-xs font-medium text-white transition hover:bg-[color-mix(in_srgb,#01796F_88%,#000)] sm:inline-flex"
+            className="hidden border border-foreground/25 px-4 py-2 text-[0.75rem] uppercase tracking-[0.16em] text-foreground transition-colors hover:bg-foreground hover:text-background sm:block"
           >
             {t.nav.cta}
           </button>
@@ -96,27 +96,34 @@ export function Nav({ onStart }: { onStart: () => void }) {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            className="mx-auto mt-2 max-w-7xl overflow-hidden rounded-2xl border border-border bg-white text-foreground shadow-sm md:hidden"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-border/60 bg-background/95 backdrop-blur-xl md:hidden"
           >
-            <ul className="px-4 py-2">
+            <ul className="flex flex-col px-6 py-4">
               {items.map((i) => (
                 <li key={i.href}>
-                  <a href={i.href} onClick={() => setOpen(false)} className="block py-3 text-sm">
+                  <a
+                    href={i.href}
+                    onClick={() => setOpen(false)}
+                    className="block py-3 text-sm text-foreground"
+                  >
                     {i.label}
                   </a>
                 </li>
               ))}
             </ul>
-            <div className="flex items-center justify-between border-t border-border px-4 py-3">
-              <div className="flex gap-2">
+            <div className="flex items-center justify-between border-t border-border/60 px-6 py-4">
+              <div className="flex gap-3">
                 {LANGS.map((l) => (
                   <button
                     key={l}
                     onClick={() => setLang(l)}
-                    className={`text-xs ${lang === l ? "text-ink" : "text-slate"}`}
+                    className={`text-[0.6875rem] tracking-[0.16em] ${
+                      lang === l ? "text-foreground" : "text-muted-foreground/60"
+                    }`}
                   >
                     {l}
                   </button>
@@ -127,7 +134,7 @@ export function Nav({ onStart }: { onStart: () => void }) {
                   setOpen(false);
                   onStart();
                 }}
-                className="rounded-xl bg-pine px-3 py-2 text-xs font-medium text-white"
+                className="border border-foreground/25 px-4 py-2 text-[0.75rem] uppercase tracking-[0.16em]"
               >
                 {t.nav.cta}
               </button>
