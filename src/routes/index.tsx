@@ -20,6 +20,7 @@ import { Testimonials } from "@/components/planx/Testimonials";
 import { Faq } from "@/components/planx/Faq";
 import { FinalCta } from "@/components/planx/FinalCta";
 import { Footer } from "@/components/planx/Footer";
+import { APP_URL } from "@/lib/links";
 
 import heroVilla from "@/assets/hero-villa.jpg";
 import facade from "@/assets/facade.jpg";
@@ -64,7 +65,10 @@ function Page() {
 function Landing() {
   const { t } = useLang();
 
-  const start = () => toast(t.toast.start);
+  // Same-tab redirect to the PlanX app (Start Designing / nav CTA / calculator / final CTA).
+  const start = () => {
+    window.location.assign(APP_URL);
+  };
   const explore = () => {
     document.getElementById("architecture")?.scrollIntoView({ behavior: "smooth" });
     toast(t.toast.explore);
