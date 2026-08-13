@@ -20,7 +20,6 @@ import { Testimonials } from "@/components/planx/Testimonials";
 import { Faq } from "@/components/planx/Faq";
 import { FinalCta } from "@/components/planx/FinalCta";
 import { Footer } from "@/components/planx/Footer";
-import { APP_URL } from "@/lib/links";
 
 import heroVilla from "@/assets/hero-villa.jpg";
 import facade from "@/assets/facade.jpg";
