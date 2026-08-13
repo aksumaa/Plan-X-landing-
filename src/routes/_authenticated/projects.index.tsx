@@ -5,7 +5,7 @@ import { AppShell } from "@/components/planx-app/AppShell";
 import { useT } from "@/lib/planx/app-i18n";
 import { useDeleteProject, useDuplicateProject, useProjects, useUpdateProject } from "@/lib/planx/data";
 
-export const Route = createFileRoute("/_authenticated/projects")({ component: Projects });
+export const Route = createFileRoute("/_authenticated/projects/")({ component: Projects });
 
 function Projects() {
   const { t } = useT();
