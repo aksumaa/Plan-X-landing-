@@ -335,7 +335,7 @@ function Cards({
   );
 }
 
-function NumField({ label, value, onChange }: { label: string; value?: number; onChange: (v?: number) => void }) {
+function NumField({ label, value, onChange }: { label: string; value?: number | undefined; onChange: (v?: number | undefined) => void }) {
   return (
     <label className="flex flex-col gap-2">
       <span className="eyebrow">{label}</span>

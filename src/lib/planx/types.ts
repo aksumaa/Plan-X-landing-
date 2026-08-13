@@ -31,7 +31,7 @@ export type FloorPlan = {
 export type Brief = {
   who: string;
   buildingType: string;
-  land: { area?: number; width?: number; length?: number; location?: string };
+  land: { area?: number | undefined; width?: number | undefined; length?: number | undefined; location?: string | undefined };
   req: {
     area: number;
     floors: number;
@@ -42,12 +42,12 @@ export type Brief = {
     garage: boolean;
     pool: boolean;
     terrace: boolean;
-    other?: string;
+    other?: string | undefined;
   };
   style: string;
-  budget?: number;
-  idea?: string;
-  attachments?: { name: string; type: string }[];
+  budget?: number | undefined;
+  idea?: string | undefined;
+  attachments?: { name: string; type: string }[] | undefined;
 };
 
 export type MaterialLine = { key: string; qty: number; unit: string };
@@ -83,7 +83,7 @@ export type ProjectRow = {
   currency: string;
   plan: FloorPlan | Record<string, unknown>;
   model: Record<string, unknown>;
-  materials: { lines?: MaterialLine[] } | Record<string, unknown>;
+  materials: { lines?: MaterialLine[] | undefined } | Record<string, unknown>;
   cost: CostEstimate | Record<string, unknown>;
   score: ProjectScore | Record<string, unknown>;
   timeline: Record<string, unknown>;
