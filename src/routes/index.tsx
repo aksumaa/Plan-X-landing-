@@ -67,7 +67,7 @@ function Landing() {
 
   // Same-tab redirect to the PlanX app (Start Designing / nav CTA / calculator / final CTA).
   const start = () => {
-    window.location.assign(APP_URL);
+    window.location.assign("/auth");
   };
   const explore = () => {
     document.getElementById("architecture")?.scrollIntoView({ behavior: "smooth" });
