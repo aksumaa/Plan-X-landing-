@@ -14,7 +14,155 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          currency: string
+          full_name: string | null
+          id: string
+          language: string
+          theme: string
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          currency?: string
+          full_name?: string | null
+          id: string
+          language?: string
+          theme?: string
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          currency?: string
+          full_name?: string | null
+          id?: string
+          language?: string
+          theme?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      project_messages: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          project_id: string
+          proposal: Json | null
+          role: string
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          project_id: string
+          proposal?: Json | null
+          role: string
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          project_id?: string
+          proposal?: Json | null
+          role?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "project_messages_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      projects: {
+        Row: {
+          area: number | null
+          bathrooms: number | null
+          bedrooms: number | null
+          brief: Json
+          budget: number | null
+          cost: Json
+          created_at: string
+          currency: string
+          description: string | null
+          floors: number | null
+          id: string
+          materials: Json
+          model: Json
+          name: string
+          plan: Json
+          score: Json
+          share_slug: string | null
+          status: string
+          style: string | null
+          timeline: Json
+          updated_at: string
+          user_id: string
+          visibility: string
+        }
+        Insert: {
+          area?: number | null
+          bathrooms?: number | null
+          bedrooms?: number | null
+          brief?: Json
+          budget?: number | null
+          cost?: Json
+          created_at?: string
+          currency?: string
+          description?: string | null
+          floors?: number | null
+          id?: string
+          materials?: Json
+          model?: Json
+          name?: string
+          plan?: Json
+          score?: Json
+          share_slug?: string | null
+          status?: string
+          style?: string | null
+          timeline?: Json
+          updated_at?: string
+          user_id: string
+          visibility?: string
+        }
+        Update: {
+          area?: number | null
+          bathrooms?: number | null
+          bedrooms?: number | null
+          brief?: Json
+          budget?: number | null
+          cost?: Json
+          created_at?: string
+          currency?: string
+          description?: string | null
+          floors?: number | null
+          id?: string
+          materials?: Json
+          model?: Json
+          name?: string
+          plan?: Json
+          score?: Json
+          share_slug?: string | null
+          status?: string
+          style?: string | null
+          timeline?: Json
+          updated_at?: string
+          user_id?: string
+          visibility?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
