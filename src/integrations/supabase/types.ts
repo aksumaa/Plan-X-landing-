@@ -24,6 +24,7 @@ export type Database = {
           language: string
           theme: string
           updated_at: string
+          user_type: string | null
         }
         Insert: {
           avatar_url?: string | null
@@ -34,6 +35,7 @@ export type Database = {
           language?: string
           theme?: string
           updated_at?: string
+          user_type?: string | null
         }
         Update: {
           avatar_url?: string | null
@@ -44,6 +46,7 @@ export type Database = {
           language?: string
           theme?: string
           updated_at?: string
+          user_type?: string | null
         }
         Relationships: []
       }
@@ -98,15 +101,20 @@ export type Database = {
           description: string | null
           floors: number | null
           id: string
+          location: Json
           materials: Json
           model: Json
           name: string
+          objects: Json
           plan: Json
+          requirements: Json
           score: Json
           share_slug: string | null
+          site: Json
           status: string
           style: string | null
           timeline: Json
+          type: string
           updated_at: string
           user_id: string
           visibility: string
@@ -123,15 +131,20 @@ export type Database = {
           description?: string | null
           floors?: number | null
           id?: string
+          location?: Json
           materials?: Json
           model?: Json
           name?: string
+          objects?: Json
           plan?: Json
+          requirements?: Json
           score?: Json
           share_slug?: string | null
+          site?: Json
           status?: string
           style?: string | null
           timeline?: Json
+          type?: string
           updated_at?: string
           user_id: string
           visibility?: string
@@ -148,15 +161,20 @@ export type Database = {
           description?: string | null
           floors?: number | null
           id?: string
+          location?: Json
           materials?: Json
           model?: Json
           name?: string
+          objects?: Json
           plan?: Json
+          requirements?: Json
           score?: Json
           share_slug?: string | null
+          site?: Json
           status?: string
           style?: string | null
           timeline?: Json
+          type?: string
           updated_at?: string
           user_id?: string
           visibility?: string
